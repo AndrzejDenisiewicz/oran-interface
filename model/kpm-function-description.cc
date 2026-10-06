@@ -29,6 +29,7 @@
 #include <ns3/kpm-function-description.h>
 #include <ns3/asn1c-types.h>
 #include <ns3/log.h>
+#include <cassert>
 
 extern "C" {
 #include "RIC-EventTriggerStyle-Item.h"

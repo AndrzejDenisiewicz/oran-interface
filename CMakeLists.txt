@@ -69,3 +69,11 @@ install(FILES
     ${header_files}
     DESTINATION ${NS3_INSTALL_INCLUDE_DIR}
 )
+
+# Keep the CCC message public wrapper available for NR sources that include it
+# directly.  Some ns-3 CMake configurations omit this header from the generated
+# wrapper set even though it is part of the module's public header list.
+file(GENERATE
+    OUTPUT "${NS3_OUTPUT_DIRECTORY}/include/ns3/ccc-message.h"
+    CONTENT "#include \"${CMAKE_CURRENT_SOURCE_DIR}/model/ccc-message.h\"\n"
+)

@@ -30,6 +30,7 @@
 #ifndef KPM_INDICATION_H
 #define KPM_INDICATION_H
 
+#include <cassert>
 #include <thread>
 #include "ns3/object.h"
 #include <set>

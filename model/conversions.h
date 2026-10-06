@@ -24,6 +24,7 @@
 #ifndef CONVERSIONS_H_
 #define CONVERSIONS_H_
 
+#include <cassert>
 #include <stdint.h>
 #include <stdlib.h>
 

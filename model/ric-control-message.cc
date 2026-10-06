@@ -27,6 +27,7 @@
 #include "RANParameter-ValueType-Choice-ElementFalse.h"
 #include <ns3/asn1c-types.h>
 #include <ns3/log.h>
+#include <cassert>
 #include <bitset>
 namespace ns3 {
 

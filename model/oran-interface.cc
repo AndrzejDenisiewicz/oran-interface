@@ -25,6 +25,7 @@
 #include <ns3/oran-interface.h>
 #include <ns3/asn1c-types.h>
 #include <ns3/log.h>
+#include <cassert>
 #include <thread>
 #include "encode_e2apv1.hpp"
 #include <unistd.h>
