@@ -18,6 +18,7 @@ set(source_files
     model/ric-control-function-description.cc
     model/ccc-function-description.cc
     model/ccc-message.cc
+    model/plmn-encoding.cc
     helper/oran-interface-helper.cc
     helper/indication-message-helper.cc
     helper/lte-indication-message-helper.cc
@@ -36,6 +37,7 @@ set(header_files
     model/ric-control-function-description.h
     model/ccc-function-description.h
     model/ccc-message.h
+    model/plmn-encoding.h
     helper/oran-interface-helper.h
     helper/indication-message-helper.h
     helper/lte-indication-message-helper.h
@@ -74,6 +76,6 @@ install(FILES
 # directly.  Some ns-3 CMake configurations omit this header from the generated
 # wrapper set even though it is part of the module's public header list.
 file(GENERATE
-    OUTPUT "${NS3_OUTPUT_DIRECTORY}/include/ns3/ccc-message.h"
+    OUTPUT "${CMAKE_OUTPUT_DIRECTORY}/include/ns3/ccc-message.h"
     CONTENT "#include \"${CMAKE_CURRENT_SOURCE_DIR}/model/ccc-message.h\"\n"
 )
