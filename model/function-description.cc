@@ -37,6 +37,7 @@ FunctionDescription::FunctionDescription ()
 //   FillAndEncodeKpmFunctionDescription (descriptor);
 //   ASN_STRUCT_FREE_CONTENTS_ONLY (asn_DEF_E2SM_KPM_RANfunction_Description, descriptor);
 //   delete descriptor;
+    m_buffer = nullptr;
     m_size = 0;
 }
 

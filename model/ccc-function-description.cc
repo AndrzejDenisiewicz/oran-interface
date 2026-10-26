@@ -55,12 +55,20 @@ CccFunctionDescription::FillAndEncodeCccFunctionDescription()
     json ranFuncDefJson;
     
     // ===== RAN Function Name =====
-    ranFuncDefJson["ranFunctionName"] = {
-        {"ranFunctionShortName", "E2SM-CCC"},
-        {"ranFunctionServiceModelOID", "1.3.6.1.4.1.53148.1.2.2.4"},
-        {"ranFunctionDescription", "Cell Configuration and Control Service Model"},
-        {"ranFunctionInstance", 1}
-    };
+    ranFuncDefJson["ranFunctionName"] = json::object();
+    ranFuncDefJson["ranFunctionName"]["ranFunctionShortName"] = "E2SM-CCC";
+    ranFuncDefJson["ranFunctionName"]["ranFunctionServiceModelOID"] =
+        "1.3.6.1.4.1.53148.1.2.2.4";
+    ranFuncDefJson["ranFunctionName"]["ranFunctionDescription"] =
+        "Cell Configuration and Control Service Model";
+    ranFuncDefJson["ranFunctionName"]["ranFunctionInstance"] = 1;
+
+    std::string minimalJson = ranFuncDefJson.dump();
+    m_size = minimalJson.length();
+    m_buffer = malloc(m_size + 1);
+    std::memcpy(m_buffer, minimalJson.c_str(), m_size);
+    static_cast<char*>(m_buffer)[m_size] = '\0';
+    return;
     
     // ===== List of Supported Node-Level RAN Configuration Structures =====
     json nodeLevelConfigs = json::array({
